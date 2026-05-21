@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 生日快乐 🎂</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="bg-decoration">
+        <div class="star star-1">✨</div>
+        <div class="star star-2">⭐</div>
+        <div class="star star-3">✨</div>
+        <div class="star star-4">🌟</div>
+        <div class="star star-5">✨</div>
+        <div class="star star-6">⭐</div>
+        <div class="star star-7">💫</div>
+        <div class="star star-8">✨</div>
+    </div>
+
+    <!-- 气球容器 -->
+    <div class="balloons-container" id="balloonsContainer">
+        <div class="balloon balloon-red">🎈</div>
+        <div class="balloon balloon-blue">🎈</div>
+        <div class="balloon balloon-green">🎈</div>
+        <div class="balloon balloon-pink">🎈</div>
+        <div class="balloon balloon-purple">🎈</div>
+        <div class="balloon balloon-yellow">🎈</div>
+        <div class="balloon balloon-orange">🎈</div>
+    </div>
+
+    <!-- 飘落纸屑容器 -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- 主内容区域 -->
+    <main class="main-content">
+        <!-- 顶部标题 -->
+        <div class="title-section">
+            <h1 class="main-title">
+                <span class="title-emoji">🎉</span>
+                生日快乐
+                <span class="title-emoji">🎉</span>
+            </h1>
+            <p class="sub-title">Happy Birthday</p>
+        </div>
+
+        <!-- CSS蛋糕 -->
+        <div class="cake-wrapper">
+            <div class="cake">
+                <!-- 蜡烛 -->
+                <div class="candles">
+                    <div class="candle candle-1">
+                        <div class="flame">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="candle-body"></div>
+                    </div>
+                    <div class="candle candle-2">
+                        <div class="flame">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="candle-body"></div>
+                    </div>
+                    <div class="candle candle-3">
+                        <div class="flame">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="candle-body"></div>
+                    </div>
+                    <div class="candle candle-4">
+                        <div class="flame">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="candle-body"></div>
+                    </div>
+                    <div class="candle candle-5">
+                        <div class="flame">
+                            <div class="flame-inner"></div>
+                        </div>
+                        <div class="candle-body"></div>
+                    </div>
+                </div>
+                <!-- 蛋糕层 -->
+                <div class="cake-layer cake-layer-3">
+                    <div class="cream-drip drip-1"></div>
+                    <div class="cream-drip drip-2"></div>
+                    <div class="cream-drip drip-3"></div>
+                    <div class="cherry">🍒</div>
+                </div>
+                <div class="cake-layer cake-layer-2">
+                    <div class="sprinkle s1"></div>
+                    <div class="sprinkle s2"></div>
+                    <div class="sprinkle s3"></div>
+                    <div class="sprinkle s4"></div>
+                </div>
+                <div class="cake-layer cake-layer-1">
+                    <div class="sprinkle s5"></div>
+                    <div class="sprinkle s6"></div>
+                    <div class="sprinkle s7"></div>
+                </div>
+                <div class="cake-plate"></div>
+            </div>
+        </div>
+
+        <!-- 祝福文字 -->
+        <div class="blessing-section">
+            <p class="blessing-text" id="blessingText">
+                愿你的每一天都充满阳光与欢笑<br>
+                愿所有的美好都与你不期而遇<br>
+                愿你眼里有光，心中有爱<br>
+                愿你被世界温柔以待<br>
+                <span class="blessing-highlight">🎂 生日快乐！🎂</span>
+            </p>
+        </div>
+
+        <!-- 图片展示区 -->
+                <!-- 图片展示区 -->
+        <div class="photo-section">
+            <h2 class="section-title">📸 美好时刻</h2>
+            <div class="photo-gallery" id="photoGallery">
+                <!-- 16张图片卡片，由 JavaScript 动态生成 -->
+            </div>
+        </div>
+        <!-- 音乐播放器 -->
+        <div class="music-section">
+            <audio
+            id="bgMusic"
+            src="music/生日快乐.ogg"
+            src="music/生日快乐.mp3"
+            preload="auto"
+            loop
+            ></audio>
+            <button
+            class="music-btn"
+            id="musicBtn"
+            aria-label="播放音乐"
+            title="点击播放/暂停音乐"
+            >
+            <span class="music-icon" id="musicIcon">🎵</span>
+            <span class="music-text" id="musicText">点击播放音乐</span>
+            <span class="music-wave" id="musicWave">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+            </span>
+        </button>
+        <p class="music-hint">🎶 点击按钮播放生日快乐歌 🎶</p>
+    </div>
+
+    <!-- 底部信息 -->
+    <footer class="footer">
+        <p>💝 祝你生日快乐，万事如意 💝</p>
+        <p class="footer-date" id="footerDate"></p>
+    </footer>
+</main>
+
+<!-- 点击生成的爱心粒子 -->
+<div class="hearts-layer" id="heartsLayer"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
